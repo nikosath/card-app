@@ -1,0 +1,43 @@
+services:
+
+  card-service:
+    build: .
+    depends_on:
+      mysql-service:
+        condition: service_healthy
+    environment:
+      - MYSQL_HOST=mysql-service
+    ports:
+      - 28852:28852
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:8080/api/health"]
+#      interval: 10s
+#      timeout: 10s
+#      retries: 10
+#      start_period: 10s
+    networks:
+      - card-net
+
+  mysql-service:
+    image: mysql:8.3.0-oraclelinux8
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: yes
+    ports:
+      - 3306:3306
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 10s
+      retries: 10
+      start_period: 10s
+    volumes:
+      - mysql-vlm:/var/lib/mysql
+      - ./mysql:/docker-entrypoint-initdb.d
+    networks:
+      - card-net
+
+volumes:
+  mysql-vlm: {}
+networks:
+  card-net: {}
