@@ -7,10 +7,10 @@ https://github.dev/nikosath/card-app
 2. docker compose up
 
 ## List of TODOs
-- TODO: Add proper IT tests with separated use cases and unit tests for each app layer.
-- TODO: exclude lazy loaded fields
-- TODO: make retrieval lazy
-- TODO: Add bean validation annotations to all Entities
-- TODO: make UserContext a spring bean
-- TODO: don't use email as username
-- TODO: Use Swagger for API documentation
+- Add proper IT tests with separated use cases and unit tests for each app layer.
+- Consider making @Entity retrieval lazy.
+- Exclude lazy loaded fields from Lombok.
+- Add bean validation annotations to all @Entity.
+- Make UserContext a spring bean.
+- Don't use email as username.
+- Use Swagger for API documentation.
