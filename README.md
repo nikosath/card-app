@@ -1,3 +1,12 @@
+## Description
+
+A demo app that allows users to create and manage tasks in the form of cards:
+
+- Application users are identified uniquely by their mail address, have a role (Member or Admin) and use a password to
+  authenticate themselves before accessing cards
+  - Members have access to cards they created
+  - Admins have access to all cards
+
 ## Review
 
 https://github.dev/nikosath/card-app
@@ -10,6 +19,7 @@ https://github.dev/nikosath/card-app
 ## REST APIs
 
 ### AuthController
+
 - `POST /auth/token`: Use Basic Auth to retrieve a JWT token needed for using the CardController operations below.
   For testing purposes the [username / password] pairs for three dummy users have been hardcoded
   in method 'userDetailsService' from [SecurityConfig](src/main/java/cardapp/auth/SecurityConfig.java). These are:
@@ -27,6 +37,7 @@ https://github.dev/nikosath/card-app
 - `DELETE /cards/{cardName}`: Deletes a card by its name.
 
 ## TODOs
+
 - Add proper IT tests with separated use cases and unit tests for each app layer.
 - Consider making @Entity retrieval lazy.
 - Exclude lazy loaded fields from Lombok.
