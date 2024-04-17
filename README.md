@@ -13,7 +13,7 @@ https://github.dev/nikosath/card-app
 
 ## How to Run
 
-1. ./gardlew bootJar
+1. ./gradlew bootJar
 2. docker compose up
 
 ## REST APIs
