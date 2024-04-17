@@ -17,6 +17,7 @@ https://github.dev/nikosath/card-app
 2. docker compose up
 
 ## REST APIs
+The server port is set to 28852.
 
 ### AuthController
 
