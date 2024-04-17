@@ -94,10 +94,11 @@ public class SecurityConfig {
                         .requestMatchers(Uri.CARDS + "/**").hasAnyAuthority(
                                 toPrefixedAuthority(MEMBER), toPrefixedAuthority(ADMIN))
                         .requestMatchers(Uri.TOKEN).hasAnyAuthority(MEMBER.getAuthority(), ADMIN.getAuthority())
-                        .requestMatchers(toH2Console()).permitAll() // for testing, not for production
+                        .requestMatchers("/swagger-ui/**", "/api-docs/**").permitAll() // for testing, disable for production
+                        .requestMatchers(toH2Console()).permitAll() // for testing, disable for production
                         .anyRequest().denyAll()
                 )
-                // For testing, not for production
+                // For testing, disable for production
                 .headers(headers -> headers.frameOptions(Customizer.withDefaults()).disable())
                 .csrf(AbstractHttpConfigurer::disable)
                 .build();
