@@ -21,7 +21,7 @@ The server port is set to 28852.
 
 ### AuthController
 
-- `POST /auth/token`: Use Basic Auth to retrieve a JWT token needed for using the CardController operations below.
+- `POST /token`: Use Basic Auth to retrieve a JWT token needed for using the CardController operations below.
   For testing purposes the [username / password] pairs for three dummy users have been hardcoded
   in method 'userDetailsService' from [SecurityConfig](src/main/java/cardapp/auth/SecurityConfig.java). These are:
     - `member1@cards.io / memberPass1`
@@ -29,7 +29,8 @@ The server port is set to 28852.
     - `admin1@cards.io / adminPass1`
 
 ### CardController
-
+Use the token from AuthController as a bearer token to access the following operations.
+Example header: `Authorization: Bearer {token}` 
 - `GET /cards`: Retrieves all cards.
 - `GET /cards/search`: Searches for cards based on given parameters.
 - `POST /cards`: Creates a new card.
