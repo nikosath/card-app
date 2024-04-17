@@ -13,9 +13,9 @@ https://github.dev/nikosath/card-app
 - `POST /auth/token`: Use Basic Auth to retrieve a JWT token needed for using the CardController operations below.
   For testing purposes the [username / password] pairs for three dummy users have been hardcoded
   in method 'userDetailsService' from [SecurityConfig](src/main/java/cardapp/auth/SecurityConfig.java). These are:
-    - member1@cards.io / memberPass1
-    - member2@cards.io / memberPass2
-    - admin1@cards.io / adminPass1
+    - `member1@cards.io / memberPass1`
+    - `member2@cards.io / memberPass2`
+    - `admin1@cards.io / adminPass1`
 
 ### CardController
 
