@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 
 @Component
-//@Order(1)
 @RequiredArgsConstructor
 class UserFilter implements jakarta.servlet.Filter {
 

@@ -42,7 +42,7 @@ public class MapUtil {
 
     public static String toStatus(CardEntity.StatusEnum statusEnum) {
         return switch (statusEnum) {
-            case TODO: -> "To Do";
+            case TODO -> "To Do";
             case IN_PROGRESS -> "In Progress";
             case DONE -> "Done";
         };

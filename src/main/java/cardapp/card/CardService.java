@@ -45,7 +45,6 @@ public class CardService {
         if (isAdmin(currentUser)) {
             return cardDao.findAll();
         }
-//        return cardDao.findAllByUserProfileUsername(currentUser.getUsername());
         List<CardEntity> allUserCards = cardDao.findAllByUser(currentUser.getUserProfileId());
         log.debug("allUserCards: {}", allUserCards);
         return allUserCards;

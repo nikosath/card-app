@@ -16,21 +16,6 @@ public class ControllerExceptionHandler {
             case NOT_FOUND -> ResponseEntity.notFound().build();
         };
     }
-//
-//    @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
-//    public ResponseEntity<Object> handleException(SQLIntegrityConstraintViolationException e) {
-//        return ResponseEntity.badRequest().build();
-//    }
-//
-//    @ExceptionHandler(IllegalArgumentException.class)
-//    public ResponseEntity<Object> handleException(IllegalArgumentException e) {
-//        return ResponseEntity.badRequest().build();
-//    }
-//
-//    @ExceptionHandler(ConstraintViolationException.class)
-//    public ResponseEntity<Object> handleException(ConstraintViolationException e) {
-//        return ResponseEntity.badRequest().build();
-//    }
 
     @ExceptionHandler({SQLIntegrityConstraintViolationException.class,
             IllegalArgumentException.class, ConstraintViolationException.class})
