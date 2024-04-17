@@ -1,8 +1,12 @@
-How to Run
+## Review
+
+https://github.dev/nikosath/card-app
+
+## How to Run
 1. ./gardlew bootJar
 2. docker compose up
 
-List of TODOs
+## List of TODOs
 - TODO: Add proper IT tests with separated use cases and unit tests for each app layer.
 - TODO: exclude lazy loaded fields
 - TODO: make retrieval lazy
