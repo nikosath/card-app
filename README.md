@@ -1,3 +1,7 @@
+Review
+
+https://github.dev/nikosath/card-app
+
 How to Run
 1. ./gardlew bootJar
 2. docker compose up
