@@ -46,6 +46,8 @@ With the current application.properties, no data is kept between app restarts.
 
 ## TODOs
 
+- Retrieve user data for each request from a distributed cache (e.g. Redis)
+- Add database indexing
 - Improve integration with SpringDoc OpenAPI.
 - Add proper IT tests with separated use cases and unit tests for each app layer.
 - Don't use email as username.
