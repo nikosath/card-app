@@ -19,6 +19,7 @@ public class CardEntity extends Auditable {
     private String cardName;
     private String description;
     private String color;
+    @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     public enum StatusEnum {
