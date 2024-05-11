@@ -1,5 +1,6 @@
-package cardapp.card;
+package cardapp.card.model.db;
 
+import cardapp.card.repo.Auditable;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

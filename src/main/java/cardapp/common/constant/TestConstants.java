@@ -1,4 +1,4 @@
-package cardapp.common;
+package cardapp.common.constant;
 
 public class TestConstants {
     // for testing, not for production

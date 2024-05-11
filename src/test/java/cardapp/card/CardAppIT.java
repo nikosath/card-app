@@ -1,12 +1,13 @@
 package cardapp.card;
 
-import cardapp.auth.AuthController;
-import cardapp.auth.AuthController.TokenResponse;
-import cardapp.card.CardController.CardResponseDto;
-import cardapp.card.CardController.CreateCardDto;
-import cardapp.card.CardController.UpdateCardDto;
-import cardapp.common.TestConstants;
-import cardapp.common.Uri;
+import cardapp.auth.controller.AuthController;
+import cardapp.auth.model.dto.TokenDto;
+import cardapp.card.controller.CardController;
+import cardapp.card.model.dto.CardResponseDto;
+import cardapp.card.model.dto.CreateCardDto;
+import cardapp.card.model.dto.UpdateCardDto;
+import cardapp.common.constant.TestConstants;
+import cardapp.common.constant.Uri;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,7 +15,7 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import static cardapp.common.TestConstants.MEMBER1_USERNAME;
+import static cardapp.common.constant.TestConstants.MEMBER1_USERNAME;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -105,7 +106,7 @@ public class CardAppIT {
         var authApiHeaders = new HttpHeaders();
         authApiHeaders.setBasicAuth(username, password);
         var tokenRequest = new HttpEntity<>(authApiHeaders);
-        var tokenResponse = restTemplate.postForEntity(Uri.TOKEN, tokenRequest, TokenResponse.class);
+        var tokenResponse = restTemplate.postForEntity(Uri.TOKEN, tokenRequest, TokenDto.class);
         assertThat(tokenResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
         return tokenResponse.getBody().token();
     }

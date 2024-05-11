@@ -1,6 +1,5 @@
-package cardapp.common;
+package cardapp.card.error;
 
-import cardapp.card.ErrorEnum;
 import lombok.Getter;
 
 @Getter

@@ -1,5 +1,7 @@
-package cardapp.auth;
+package cardapp.common.controller;
 
+import cardapp.auth.model.db.UserProfileEntity;
+import cardapp.auth.repo.UserProfileDao;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;

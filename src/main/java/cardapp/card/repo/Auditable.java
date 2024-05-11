@@ -1,6 +1,6 @@
-package cardapp.card;
+package cardapp.card.repo;
 
-import cardapp.auth.UserProfileEntity;
+import cardapp.auth.model.db.UserProfileEntity;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;

@@ -1,5 +1,6 @@
-package cardapp.auth;
+package cardapp.common.controller;
 
+import cardapp.auth.model.db.UserProfileEntity;
 import lombok.extern.slf4j.Slf4j;
 
 // TODO: make UserContext a spring bean

@@ -1,7 +1,11 @@
-package cardapp.auth;
+package cardapp.auth.config;
 
-import cardapp.common.TestConstants;
-import cardapp.common.Uri;
+import cardapp.auth.model.db.UserProfileEntity;
+import cardapp.auth.repo.UserProfileDao;
+import cardapp.common.constant.TestConstants;
+import cardapp.common.constant.Uri;
+import cardapp.common.controller.UserContext;
+import cardapp.common.model.db.RoleEnum;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
@@ -31,8 +35,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-import static cardapp.auth.RoleEnum.ADMIN;
-import static cardapp.auth.RoleEnum.MEMBER;
+import static cardapp.common.model.db.RoleEnum.ADMIN;
+import static cardapp.common.model.db.RoleEnum.MEMBER;
 import static org.springframework.boot.autoconfigure.security.servlet.PathRequest.toH2Console;
 import static org.springframework.security.config.Customizer.withDefaults;
 

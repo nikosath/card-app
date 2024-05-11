@@ -1,10 +1,12 @@
-package cardapp.card;
+package cardapp.card.controller;
 
-import cardapp.common.Uri;
+import cardapp.card.model.dto.CardResponseDto;
+import cardapp.card.model.dto.CreateCardDto;
+import cardapp.card.model.dto.UpdateCardDto;
+import cardapp.card.service.CardService;
+import cardapp.common.constant.Uri;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
-import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -69,16 +71,4 @@ public class CardController {
         cardService.deleteCardByName(cardName);
     }
 
-    @Builder
-    public record CreateCardDto(@NotBlank String name, @Pattern(regexp = COLOR_PATTERN) String color,
-                                String description) {
-    }
-
-    @Builder
-    public record UpdateCardDto(@NotBlank String name, @Pattern(regexp = COLOR_PATTERN) String color,
-                                String description, String status) {
-    }
-
-    public record CardResponseDto(String cardName, String description, String color, String status) {
-    }
 }

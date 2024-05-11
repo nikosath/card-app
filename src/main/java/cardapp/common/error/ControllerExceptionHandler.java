@@ -1,5 +1,6 @@
-package cardapp.common;
+package cardapp.common.error;
 
+import cardapp.card.error.CardAppException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

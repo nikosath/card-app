@@ -1,12 +1,14 @@
-package cardapp.card;
+package cardapp.card.controller;
 
+import cardapp.card.model.db.CardEntity;
+import cardapp.card.model.dto.CardResponseDto;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
 import java.util.Optional;
 
-import static cardapp.card.CardEntity.StatusEnum.*;
+import static cardapp.card.model.db.CardEntity.StatusEnum.*;
 
 public class MapUtil {
 
@@ -22,8 +24,8 @@ public class MapUtil {
                 sortBy == null ? Sort.unsorted() : Sort.by(Sort.Direction.ASC, sortBy));
     }
 
-    public static CardController.CardResponseDto toCardResponseDto(CardEntity card) {
-        return new CardController.CardResponseDto(card.getCardName(), card.getDescription(), card.getColor(),
+    public static CardResponseDto toCardResponseDto(CardEntity card) {
+        return new CardResponseDto(card.getCardName(), card.getDescription(), card.getColor(),
                 toStatus(card.getStatus()));
     }
 

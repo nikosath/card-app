@@ -1,5 +1,6 @@
-package cardapp.auth;
+package cardapp.auth.repo;
 
+import cardapp.auth.model.db.UserProfileEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 

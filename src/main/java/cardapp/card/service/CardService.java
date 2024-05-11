@@ -1,10 +1,12 @@
-package cardapp.card;
+package cardapp.card.service;
 
-import cardapp.auth.RoleEnum;
-import cardapp.auth.UserContext;
-import cardapp.auth.UserProfileEntity;
-import cardapp.card.CardEntity.StatusEnum;
-import cardapp.common.CardAppException;
+import cardapp.auth.model.db.UserProfileEntity;
+import cardapp.card.error.CardAppException;
+import cardapp.card.model.db.CardEntity;
+import cardapp.card.model.db.CardEntity.StatusEnum;
+import cardapp.card.repo.CardDao;
+import cardapp.common.controller.UserContext;
+import cardapp.common.model.db.RoleEnum;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
@@ -14,7 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import static cardapp.card.CardEntity.StatusEnum.TODO;
+import static cardapp.card.model.db.CardEntity.StatusEnum.TODO;
 
 @Service
 @RequiredArgsConstructor
@@ -60,7 +62,7 @@ public class CardService {
     }
 
 
-    List<CardEntity> searchCards(String name, String color, LocalDate creationDate,
+    public List<CardEntity> searchCards(String name, String color, LocalDate creationDate,
                                  StatusEnum statusEnum, Pageable page) {
 
         UserProfileEntity currentUser = UserContext.getCurrentUser();
@@ -70,7 +72,7 @@ public class CardService {
         return cardDao.searchCards(currentUser.getUserProfileId(), name, color, statusEnum, creationDate, page);
     }
 
-    CardEntity updateCard(String currentName, String newName, String newColor, String newDescription,
+    public CardEntity updateCard(String currentName, String newName, String newColor, String newDescription,
                           StatusEnum newStatus) {
 
         CardEntity cardEntity = getCardByUserAndByNameOrThrow(currentName);

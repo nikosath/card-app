@@ -1,5 +1,6 @@
-package cardapp.auth;
+package cardapp.auth.model.db;
 
+import cardapp.common.model.db.RoleEnum;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

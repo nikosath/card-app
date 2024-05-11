@@ -1,4 +1,4 @@
-package cardapp.auth;
+package cardapp.common.model.db;
 
 import lombok.Getter;
 

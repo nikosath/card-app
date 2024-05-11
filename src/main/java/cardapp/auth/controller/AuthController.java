@@ -1,6 +1,7 @@
-package cardapp.auth;
+package cardapp.auth.controller;
 
-import cardapp.common.Uri;
+import cardapp.auth.model.dto.TokenDto;
+import cardapp.common.constant.Uri;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,7 +22,7 @@ public class AuthController {
     private final JwtEncoder jwtEncoder;
 
     @PostMapping(Uri.TOKEN)
-    public TokenResponse token(Authentication authentication) {
+    public TokenDto token(Authentication authentication) {
         List<String> authorities = authentication.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .toList();
@@ -35,9 +36,7 @@ public class AuthController {
 
         String token = jwtEncoder.encode(JwtEncoderParameters.from(claimsSet))
                 .getTokenValue();
-        return new TokenResponse(token);
+        return new TokenDto(token);
     }
 
-    public record TokenResponse(String token) {
-    }
 }
